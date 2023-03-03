@@ -8,7 +8,7 @@ export default function App() {
   return (
     <MainDiv>
       <Header/>
-      <Questions/>
+      <Questions cards={cards}/>
       <Footer/>     
     </MainDiv>
   );

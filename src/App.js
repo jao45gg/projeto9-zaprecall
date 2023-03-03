@@ -1,11 +1,15 @@
 import cards from './mock.js'
 import styled from 'styled-components';
 import Header from './components/Header.js';
+import Footer from './components/Footer.js'
+import Questions from './components/Questions.js'
 
 export default function App() {
   return (
     <MainDiv>
-      <Header/>     
+      <Header/>
+      <Questions/>
+      <Footer/>     
     </MainDiv>
   );
 }

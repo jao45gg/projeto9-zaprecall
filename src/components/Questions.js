@@ -24,4 +24,4 @@ const DivQuestions = styled.div`
         display: none;
     }
     
-`
+`;

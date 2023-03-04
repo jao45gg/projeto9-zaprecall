@@ -22,4 +22,4 @@ const DivFooter = styled.div`
     width: 100vw;
     height: 13.1vh;
     box-shadow: 0px -4px 6px rgba(0, 0, 0, 0.05);
-`
+`;

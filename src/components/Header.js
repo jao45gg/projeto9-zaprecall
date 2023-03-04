@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import logo from '../assets/logo.png'
+import logo from '../assets/logo.png';
 
 export default function Header() {
     return (
@@ -14,7 +14,8 @@ const Logo = styled.img`
     width: 15.7vw;
     height: auto;
     margin-right: 6.7vw;
-`
+`;
+
 const DivImg = styled.div`
     display: flex;
     align-items: center;
@@ -24,4 +25,4 @@ const DivImg = styled.div`
     color: #FFFFFF;
     position: fixed;
     top: 7.9vh;
-`
+`;

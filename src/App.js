@@ -1,8 +1,8 @@
-import cards from './mock.js'
+import cards from './mock.js';
 import styled from 'styled-components';
 import Header from './components/Header.js';
-import Footer from './components/Footer.js'
-import Questions from './components/Questions.js'
+import Footer from './components/Footer.js';
+import Questions from './components/Questions.js';
 import { useState } from 'react';
 
 export default function App() {
@@ -13,7 +13,7 @@ export default function App() {
     <MainDiv>
       <Header/>
       <Questions cards={cards} SetContador={SetContador} contador={contador}/>
-      <Footer contador={contador} total={cards.length}/>   
+      <Footer contador={contador} total={cards.length}/>
     </MainDiv>
   );
 }
@@ -25,4 +25,4 @@ const MainDiv = styled.div`
     align-items: center;
     width: 100vw;
     height: 100vh;
-`
+`;

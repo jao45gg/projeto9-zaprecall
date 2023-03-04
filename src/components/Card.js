@@ -1,15 +1,16 @@
 import styled from "styled-components";
-import imgPlay from '../assets/seta_play.png'
-import imgVirar from '../assets/seta_virar.png'
-import imgErro from '../assets/icone_erro.png'
-import imgCerto from '../assets/icone_certo.png'
-import imgQuase from '../assets/icone_quase.png'
 import { useState } from "react";
+import imgPlay from '../assets/seta_play.png';
+import imgVirar from '../assets/seta_virar.png';
+import imgErro from '../assets/icone_erro.png';
+import imgCerto from '../assets/icone_certo.png';
+import imgQuase from '../assets/icone_quase.png';
+import { ButtonNao, ButtonQuase, ButtonZap } from "../styled/Buttons";
 
 export default function Card({ card, index, SetContador, contador }) {
 
     const [CardCss, SetCardCss] = useState(0);
-    let text = `Pergunta ${index + 1}`
+    const text = `Pergunta ${index + 1}`;
 
     function colorText() {
         if (CardCss === "nao") {
@@ -73,26 +74,26 @@ export default function Card({ card, index, SetContador, contador }) {
         justify-content: ${CardCss === 0 ? "initial" : CardCss === 1 ? "flex-start" : isNaN(CardCss) ? "initial" : "flex-start"};
         width: ${CardCss === 0 ? "initial" : CardCss === 1 ? "100%" : isNaN(CardCss) ? "initial" : "100%"};
         padding-top: ${CardCss === 0 ? "0" : CardCss === 1 ? "2vh" : isNaN(CardCss) ? "0" : "2vh"};
-    }
+    };
 
     div:nth-child(2) {
         display: flex;
         justify-content: ${CardCss === 0 ? "initial" : CardCss === 1 ? "flex-end" : CardCss === 2 ? "space-between" : "flex-end"};
         width: ${CardCss === 0 ? "initial" : CardCss === 1 ? "100%" : isNaN(CardCss) ? "initial" : "100%"};
         padding-bottom: ${CardCss === 0 ? "0" : CardCss === 1 ? "2vh" : isNaN(CardCss) ? "0" : "2vh"};
-    }
+    };
 
     div:nth-child(2) button {
         display: ${CardCss === 0 ? "none" : CardCss === 2 ? "initial" : "none"};
-    }
-`
+    };
+`;
 
     const ImgCard = styled.img`
     width: ${CardCss === 0 ? "6.5vw" : CardCss === 1 ? "8.3vw" : isNaN(CardCss) ? "6.5vw" : "8.3vw"};
     height: ${CardCss === 0 ? "4.1vh" : CardCss === 1 ? "4vh" : isNaN(CardCss) ? "4.1vh" : "4vh"};
-    display: ${CardCss === 0 ? "initial" : CardCss === 2 ? "none" : isNaN(CardCss) ? "initial" : "initial"};
+    display: ${CardCss === 0 ? "initial" : CardCss === 2 ? "none" : "initial"};
     pointer-events: ${CardCss === 0 ? "initial" : isNaN(CardCss) ? "none" : "initial"};
-`
+`;
 
     return (
         <DivCard data-test="flashcard">
@@ -105,34 +106,19 @@ export default function Card({ card, index, SetContador, contador }) {
                         SetCardCss(2);
                     }
                 }} />
-                <ButtonNao data-test="no-btn" onClick={() => { SetCardCss("nao"); SetContador(contador + 1); }}>Não lembrei</ButtonNao>
-                <ButtonQuase data-test="partial-btn" onClick={() => { SetCardCss("quase"); SetContador(contador + 1); }}>Quase não lembrei</ButtonQuase>
-                <ButtonZap data-test="zap-btn" onClick={() => { SetCardCss("zap"); SetContador(contador + 1); }}>Zap!</ButtonZap>
+                <ButtonNao data-test="no-btn" onClick={() => { 
+                    SetCardCss("nao"); 
+                    SetContador(contador + 1); 
+                    }}>Não lembrei</ButtonNao>
+                <ButtonQuase data-test="partial-btn" onClick={() => { 
+                    SetCardCss("quase"); 
+                    SetContador(contador + 1); 
+                    }}>Quase não lembrei</ButtonQuase>
+                <ButtonZap data-test="zap-btn" onClick={() => { 
+                    SetCardCss("zap"); 
+                    SetContador(contador + 1); 
+                    }}>Zap!</ButtonZap>
             </div>
         </DivCard>
     );
 }
-
-const Button = styled.button`
-    font-size: 3vw;
-    font-weight: 400;
-    font-family: 'Recursive', sans-serif;
-    color: #FFFFFF;
-    border: 0;
-    border-radius: 5px;
-    height: 7vh;
-`
-
-const ButtonNao = styled(Button)`
-    background-color: #FF3030;
-`
-
-const ButtonQuase = styled(Button)`
-    background-color: #FF992E;
-    margin-left: 5px;
-    margin-right: 5px;
-`
-
-const ButtonZap = styled(Button)`
-    background-color:  #2FBE34;
-`

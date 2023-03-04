@@ -1,9 +1,9 @@
 import styled from "styled-components";
 
-export default function Footer() {
+export default function Footer({contador, total}) {
     return (
-        <DivFooter>
-            0/4 CONCLUÍDOS
+        <DivFooter data-test="footer">
+           {`${contador}/${total}`} CONCLUÍDOS
         </DivFooter>
     );
 }

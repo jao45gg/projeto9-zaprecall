@@ -1,10 +1,10 @@
 import styled from "styled-components";
 import Card from "./Card";
 
-export default function Questions({ cards }) {
+export default function Questions({ cards, SetContador, contador }) {
     return (
         <DivQuestions>
-            {cards.map((c, index) => <Card card={c} index={index} key={index} />)}
+            {cards.map((c, index) => <Card card={c} index={index} key={index} SetContador={SetContador} contador={contador}/>)}
         </DivQuestions>
     );
 }
